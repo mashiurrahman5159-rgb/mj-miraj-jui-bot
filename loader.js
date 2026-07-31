@@ -5,24 +5,56 @@
   btn.id = "mj-float-btn";
   btn.innerHTML = "MJ";
 
-  btn.style.position = "fixed";
-  btn.style.top = "120px";
-  btn.style.left = "20px";
-  btn.style.width = "60px";
-  btn.style.height = "60px";
-  btn.style.borderRadius = "50%";
-  btn.style.background = "#00d4aa";
-  btn.style.color = "#fff";
-  btn.style.fontSize = "20px";
-  btn.style.fontWeight = "bold";
-  btn.style.display = "flex";
-  btn.style.alignItems = "center";
-  btn.style.justifyContent = "center";
-  btn.style.zIndex = "999999";
-
-  btn.onclick = function () {
-    alert("MJ MIRAJ JUI BOT");
-  };
+  Object.assign(btn.style, {
+    position: "fixed",
+    left: "20px",
+    top: "120px",
+    width: "70px",
+    height: "70px",
+    borderRadius: "50%",
+    background: "#00C853",
+    color: "#FFFFFF",
+    fontSize: "22px",
+    fontWeight: "bold",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    cursor: "grab",
+    userSelect: "none",
+    zIndex: "999999"
+  });
 
   document.body.appendChild(btn);
+
+  let dragging = false;
+  let offsetX = 0;
+  let offsetY = 0;
+
+  btn.addEventListener("pointerdown", (e) => {
+    dragging = true;
+    offsetX = e.clientX - btn.offsetLeft;
+    offsetY = e.clientY - btn.offsetTop;
+    btn.style.cursor = "grabbing";
+  });
+
+  document.addEventListener("pointermove", (e) => {
+    if (!dragging) return;
+    btn.style.left = (e.clientX - offsetX) + "px";
+    btn.style.top = (e.clientY - offsetY) + "px";
+  });
+
+  document.addEventListener("pointerup", () => {
+    dragging = false;
+    btn.style.cursor = "grab";
+  });
+
+  btn.addEventListener("click", () => {
+    const panel = document.getElementById("mj-panel");
+    if (panel) {
+      panel.style.display =
+        panel.style.display === "block" ? "none" : "block";
+    } else {
+      alert("MJ MIRAJ JUI BOT");
+    }
+  });
 })();
