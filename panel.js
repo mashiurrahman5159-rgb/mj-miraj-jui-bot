@@ -4,35 +4,42 @@
   const panel = document.createElement("div");
   panel.id = "mj-panel";
 
-  panel.style.position = "fixed";
-  panel.style.top = "90px";
-  panel.style.right = "20px";
-  panel.style.width = "320px";
-  panel.style.background = "#111";
-  panel.style.color = "#fff";
-  panel.style.border = "2px solid #00C853";
-  panel.style.borderRadius = "12px";
-  panel.style.padding = "15px";
-  panel.style.display = "none";
-  panel.style.zIndex = "999999";
+  Object.assign(panel.style, {
+    position: "fixed",
+    top: "80px",
+    right: "20px",
+    width: "340px",
+    background: "#111",
+    color: "#fff",
+    border: "2px solid #00C853",
+    borderRadius: "12px",
+    padding: "15px",
+    zIndex: "999999",
+    display: "none",
+    fontFamily: "Arial, sans-serif",
+    boxShadow: "0 0 15px rgba(0,0,0,.5)"
+  });
 
   panel.innerHTML = `
-    <h2 style="margin:0;text-align:center;color:#00C853;">
-      MJ MIRAJ JUI BOT
-    </h2>
+    <div style="text-align:center;">
+      <h2 style="margin:0;color:#00C853;">MJ MIRAJ JUI BOT</h2>
+      <small>Premium Edition</small>
+    </div>
 
     <hr>
 
-    <p><b>License Status:</b> Not Activated</p>
+    <p><b>License Status:</b> <span style="color:orange;">Not Activated</span></p>
 
     <input
+      id="licenseInput"
       type="text"
       placeholder="Enter License Key"
-      style="width:100%;padding:10px;border-radius:6px;border:none;">
+      style="width:100%;padding:10px;border-radius:6px;border:none;box-sizing:border-box;">
 
     <br><br>
 
-    <button style="width:100%;padding:10px;background:#00C853;color:white;border:none;border-radius:6px;">
+    <button id="activateBtn"
+      style="width:100%;padding:10px;background:#00C853;color:white;border:none;border-radius:6px;">
       Activate License
     </button>
 
@@ -41,46 +48,34 @@
     <h3 style="text-align:center;">Pattern Preview</h3>
 
     <img
-      src=""
       id="patternImage"
-      style="width:100%;height:160px;background:#222;border-radius:8px;object-fit:contain;">
+      src=""
+      style="width:100%;height:170px;background:#222;border-radius:8px;object-fit:contain;">
 
-    <p><b>Pattern:</b> None</p>
+    <p><b>Pattern:</b> Waiting...</p>
 
     <p><b>Signal:</b> Waiting...</p>
 
-    <button style="width:100%;padding:10px;background:#2196F3;color:white;border:none;border-radius:6px;">
+    <button
+      style="width:100%;padding:10px;background:#2196F3;color:white;border:none;border-radius:6px;">
       Read Pattern
     </button>
-  `<hr>
-<h3 style="text-align:center;color:#00C853;">
-Pattern Result
-</h3>
 
-<div id="patternResult" style="
-background:#1a1a1a;
-padding:10px;
-border-radius:8px;
-text-align:center;
-">
+    <br><br>
 
-<p><b>Pattern ID:</b> --</p>
+    <button id="closePanel"
+      style="width:100%;padding:10px;background:#F44336;color:white;border:none;border-radius:6px;">
+      Close
+    </button>
 
-<p><b>Pattern Name:</b> Waiting...</p>
-
-<p><b>Signal:</b> Waiting...</p>
-
-<img id="patternPreview"
-src=""
-style="
-width:100%;
-height:180px;
-object-fit:contain;
-background:#222;
-border-radius:8px;
-">
-
-</div>
+    <p style="text-align:center;margin-top:15px;font-size:12px;color:#aaa;">
+      Developer: MJ MIRAJ JUI BOT
+    </p>
+  `;
 
   document.body.appendChild(panel);
+
+  document.getElementById("closePanel").onclick = function () {
+    panel.style.display = "none";
+  };
 })();
