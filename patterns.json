@@ -1,0 +1,16 @@
+{
+  "patterns": [
+    {
+      "id": 1,
+      "name": "Pattern 1",
+      "signal": "UP",
+      "image": "images/p01.png"
+    },
+    {
+      "id": 2,
+      "name": "Pattern 2",
+      "signal": "DOWN",
+      "image": "images/p02.png"
+    }
+  ]
+}
