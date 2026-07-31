@@ -52,7 +52,35 @@
     <button style="width:100%;padding:10px;background:#2196F3;color:white;border:none;border-radius:6px;">
       Read Pattern
     </button>
-  `;
+  `<hr>
+<h3 style="text-align:center;color:#00C853;">
+Pattern Result
+</h3>
+
+<div id="patternResult" style="
+background:#1a1a1a;
+padding:10px;
+border-radius:8px;
+text-align:center;
+">
+
+<p><b>Pattern ID:</b> --</p>
+
+<p><b>Pattern Name:</b> Waiting...</p>
+
+<p><b>Signal:</b> Waiting...</p>
+
+<img id="patternPreview"
+src=""
+style="
+width:100%;
+height:180px;
+object-fit:contain;
+background:#222;
+border-radius:8px;
+">
+
+</div>
 
   document.body.appendChild(panel);
 })();
