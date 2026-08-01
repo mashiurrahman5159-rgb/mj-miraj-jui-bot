@@ -1,27 +1,23 @@
-{
-  "botName": "MJ MIRAJ JUI BOT",
-  "version": "1.0.0",
-  "patterns": [
-    {
-      "id": 1,
-      "name": "Pattern 1",
-      "signal": "BUY",
-      "confidence": 95,
-      "image": "images/p1.png"
-    },
-    {
-      "id": 2,
-      "name": "Pattern 2",
-      "signal": "SELL",
-      "confidence": 94,
-      "image": "images/p2.png"
-    },
-    {
-      "id": 3,
-      "name": "Pattern 3",
-      "signal": "BUY",
-      "confidence": 96,
-      "image": "images/p3.png"
-    }
-  ]
-}
+[
+  {
+    "id": 1,
+    "name": "Pattern 1",
+    "signal": "BUY",
+    "confidence": "95%",
+    "image": "images/p1.png"
+  },
+  {
+    "id": 2,
+    "name": "Pattern 2",
+    "signal": "SELL",
+    "confidence": "94%",
+    "image": "images/p2.png"
+  },
+  {
+    "id": 3,
+    "name": "Pattern 3",
+    "signal": "BUY",
+    "confidence": "96%",
+    "image": "images/p3.png"
+  }
+]
