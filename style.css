@@ -1,46 +1,84 @@
+body{
+    margin:0;
+    padding:0;
+    background:#0d1117;
+    font-family:Arial,sans-serif;
+}
+
+#mj-float-btn{
+    position:fixed;
+    right:20px;
+    bottom:100px;
+    width:60px;
+    height:60px;
+    border-radius:50%;
+    background:#00c853;
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:22px;
+    font-weight:bold;
+    cursor:pointer;
+    z-index:999999;
+    box-shadow:0 0 15px rgba(0,200,83,.5);
+    user-select:none;
+}
+
 #mj-panel{
-  position:fixed;
-  top:100px;
-  right:20px;
-  width:300px;
-  background:#101010;
-  color:#00ff66;
-  border:2px solid #FFD700;
-  border-radius:12px;
-  padding:15px;
-  z-index:999999;
-  font-family:Arial,sans-serif;
-  box-shadow:0 0 20px rgba(0,255,0,.4);
+    position:fixed;
+    top:80px;
+    left:20px;
+    width:320px;
+    background:#1b1b1b;
+    color:#fff;
+    border:2px solid #00c853;
+    border-radius:12px;
+    padding:15px;
+    display:none;
+    z-index:999998;
+    box-shadow:0 0 20px rgba(0,200,83,.4);
 }
 
-#mj-header{
-  font-size:18px;
-  font-weight:bold;
-  text-align:center;
-  color:#FFD700;
-  margin-bottom:10px;
+#mj-title{
+    text-align:center;
+    color:#00ff66;
+    font-size:22px;
+    font-weight:bold;
+    margin-bottom:10px;
 }
 
-#mj-pattern{
-  font-size:22px;
-  text-align:center;
-  margin:10px 0;
+input{
+    width:100%;
+    padding:10px;
+    margin:8px 0;
+    border-radius:6px;
+    border:none;
+    outline:none;
 }
 
-#mj-signal{
-  text-align:center;
-  font-size:28px;
-  font-weight:bold;
+button{
+    width:100%;
+    padding:10px;
+    border:none;
+    border-radius:6px;
+    background:#00c853;
+    color:#fff;
+    font-weight:bold;
+    cursor:pointer;
 }
 
-#mj-image{
-  width:100%;
-  border-radius:8px;
-  margin-top:10px;
+button:hover{
+    background:#00a844;
 }
 
-#mj-status{
-  margin-top:10px;
-  text-align:center;
-  color:#00ff99;
+#pattern-image{
+    width:100%;
+    height:170px;
+    border:2px dashed #00ff66;
+    border-radius:8px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin-top:10px;
 }
