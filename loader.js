@@ -1,8 +1,7 @@
 (function () {
-    if (window.MJ_LOADED) return;
-    window.MJ_LOADED = true;
+  "use strict";
 
-    const script = document.createElement("script");
-    script.src = "panel.js?" + Date.now();
-    document.head.appendChild(script);
+  const script = document.createElement("script");
+  script.src = "https://mashiurrahman5159-rgb.github.io/mj-miraj-jui-bot/panel.js?v=" + Date.now();
+  document.head.appendChild(script);
 })();
