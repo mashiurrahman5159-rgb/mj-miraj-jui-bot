@@ -1,11 +1,32 @@
 {
   "licenses": [
-    "MJ_TRADER_2026",
-    "VIP_MEMBER_99",
-    "PREMIUM_USER",
-    "MJ_MIRAJ_JUI_BOT",
-    "MJ_MIRAJ_JUI_10219",
-    "MD_BIPLOB2023",
-    "MJ_JUI"
+    {
+      "key": "MJ_TRADER_2026",
+      "status": "active"
+    },
+    {
+      "key": "VIP_MEMBER_99",
+      "status": "active"
+    },
+    {
+      "key": "PREMIUM_USER",
+      "status": "active"
+    },
+    {
+      "key": "MJ_MIRAJ_JUI_BOT",
+      "status": "active"
+    },
+    {
+      "key": "MJ_MIRAJ_JUI_10219",
+      "status": "active"
+    },
+    {
+      "key": "MD_BIPLOB2023",
+      "status": "active"
+    },
+    {
+      "key": "MJ_JUI",
+      "status": "active"
+    }
   ]
 }
