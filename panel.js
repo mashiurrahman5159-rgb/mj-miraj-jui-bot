@@ -91,3 +91,9 @@ function showMJButton() {
     };
 
 }
+if (localStorage.getItem("mj_license") === "true") {
+    panel.style.display = "none";
+    showMJButton();
+}
+
+})();
