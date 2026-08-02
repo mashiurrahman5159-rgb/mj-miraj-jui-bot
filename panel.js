@@ -36,5 +36,52 @@
   document.addEventListener("pointerup", function () {
     isDragging = false;
   });
+// Create Panel
+const panel = document.createElement("div");
+panel.id = "mj-panel";
 
+panel.innerHTML = `
+<div id="mj-title">MJ MIRAJ JUI BOT</div>
+
+<hr>
+
+<p><b>License Status:</b> Not Activated</p>
+
+<input
+id="license"
+type="text"
+placeholder="Enter License Key">
+
+<button id="activate">
+Activate License
+</button>
+
+<hr>
+
+<p><b>Pattern:</b> Waiting...</p>
+
+<p><b>Signal:</b> WAIT</p>
+
+<div id="pattern-image">
+Pattern Image
+</div>
+
+<br>
+
+<button id="closePanel">
+Close
+</button>
+`;
+
+document.body.appendChild(panel);
+
+// Open Panel
+btn.addEventListener("click", function () {
+    panel.style.display = "block";
+});
+
+// Close Panel
+document.getElementById("closePanel").addEventListener("click", function () {
+    panel.style.display = "none";
+});
 })();
