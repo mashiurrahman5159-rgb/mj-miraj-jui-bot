@@ -41,3 +41,53 @@ ACTIVATE
 `;
 
 document.body.appendChild(panel);
+// ===== Activate License =====
+document.getElementById("activateBtn").onclick = function () {
+
+    const key = document.getElementById("licenseKey").value.trim();
+    const msg = document.getElementById("licenseMsg");
+
+    if (VALID_KEYS.includes(key)) {
+
+        localStorage.setItem("mj_license", "true");
+
+        msg.style.color = "#00ff66";
+        msg.innerHTML = "✔ License Activated";
+
+        setTimeout(() => {
+
+            panel.style.display = "none";
+
+            showMJButton();
+
+        }, 800);
+
+    } else {
+
+        msg.style.color = "red";
+        msg.innerHTML = "✖ Invalid License";
+
+    }
+
+};
+
+// ===== Floating MJ Button =====
+function showMJButton() {
+
+    if (document.getElementById("mj-btn")) return;
+
+    const btn = document.createElement("div");
+
+    btn.id = "mj-btn";
+
+    btn.innerHTML = "MJ";
+
+    document.body.appendChild(btn);
+
+    btn.onclick = function () {
+
+        panel.style.display = "block";
+
+    };
+
+}
