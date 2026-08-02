@@ -76,8 +76,20 @@ Close
 document.body.appendChild(panel);
 
 // Open Panel
-btn.addEventListener("click", function () {
-    panel.style.display = "block";
+let moved = false;
+
+btn.addEventListener("pointerdown", () => {
+    moved = false;
+});
+
+document.addEventListener("pointermove", () => {
+    if (isDragging) moved = true;
+});
+
+btn.addEventListener("pointerup", () => {
+    if (!moved) {
+        panel.style.display = "block";
+    }
 });
 
 // Close Panel
