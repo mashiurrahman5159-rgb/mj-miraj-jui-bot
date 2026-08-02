@@ -25,5 +25,6 @@
     `;
 
     document.body.appendChild(panel);
-
+const logo = document.getElementById("mj-logo");
+logo.style.backgroundImage = "url('background.jpg')";
 })();
