@@ -1,77 +1,43 @@
 (function () {
-  "use strict";
+"use strict";
 
-  if (document.getElementById("mj-license-panel")) return;
+// Prevent duplicate loading
+if (document.getElementById("mj-license-panel")) return;
 
-  const panel = document.createElement("div");
-  panel.id = "mj-license-panel";
-
-  panel.innerHTML = `
-    <div class="mj-header">
-      <div id="mj-logo"></div>
-
-      <div class="mj-title">
-        <h2>MJ MIRAJ JUI BOT</h2>
-        <small>LICENSE ACTIVATION</small>
-      </div>
-
-      <button id="closeLicense">✕</button>
-    </div>
-
-    <label>ENTER LICENSE KEY</label>
-
-    <input
-      id="licenseKey"
-      type="text"
-      placeholder="MJ-XXXX-XXXX-XXXX">
-
-    <button id="activateBtn">
-      ACTIVATE LICENSE
-    </button>
-
-    <div id="licenseMsg"></div>
-  `;
-
-  document.body.appendChild(panel);
-// Logo
-const logo = document.getElementById("mj-logo");
-logo.style.backgroundImage = "url('background.jpg')";
-logo.style.backgroundSize = "cover";
-logo.style.backgroundPosition = "center";
-logo.style.backgroundRepeat = "no-repeat";
-
-// License List
+// ===== VALID LICENSES =====
 const VALID_KEYS = [
-  "MJ_TRADER_2026",
-  "VIP_MEMBER_99",
-  "PREMIUM_USER",
-  "MJ: MIRAJ JUI BOT",
-  "MJ: MIRAJ JUI 10219",
-  "MD: BIPLOB2023",
-  "MJ: JUI"
+"MJ_TRADER_2026",
+"VIP_MEMBER_99",
+"PREMIUM_USER",
+"MJ: MIRAJ JUI BOT",
+"MJ: MIRAJ JUI 10219",
+"MD: BIPLOB2023",
+"MJ: JUI"
 ];
 
-// Activate
-document.getElementById("activateBtn").onclick = function () {
+// ===== CREATE LICENSE PANEL =====
+const panel = document.createElement("div");
+panel.id = "mj-license-panel";
 
-  const key = document.getElementById("licenseKey").value.trim();
+panel.innerHTML = `
+<div class="mj-box">
 
-  if (VALID_KEYS.includes(key)) {
+<div class="mj-logo"></div>
 
-    document.getElementById("licenseMsg").innerHTML =
-      "<span style='color:#00ff66'>✔ License Activated</span>";
+<h2>MJ MIRAJ JUI BOT</h2>
 
-    localStorage.setItem("mj_license", key);
+<input
+id="licenseKey"
+type="text"
+placeholder="ENTER LICENSE KEY">
 
-  } else {
+<button id="activateBtn">
+ACTIVATE
+</button>
 
-    document.getElementById("licenseMsg").innerHTML =
-      "<span style='color:red'>✖ Invalid License</span>";
+<p id="licenseMsg"></p>
 
-  }
+</div>
+`;
 
-};
-  document.getElementById("closeLicense").onclick = () => {
-    panel.style.display = "none";
-  };
-})();
+document.body.appendChild(panel);
