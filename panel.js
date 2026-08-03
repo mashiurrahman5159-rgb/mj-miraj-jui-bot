@@ -21,8 +21,8 @@ position:fixed;
 top:50%;
 left:50%;
 transform:translate(-50%,-50%);
-width:260px;
-padding:15px;
+width:230px;
+padding:12px;
 background:#111;
 border:2px solid #00ff66;
 border-radius:15px;
@@ -48,16 +48,17 @@ MJ MIRAJ JUI BOT
 
 <input
 id="licenseKey"
-type="password"
-placeholder="XXXX XXXX XXXX XXXX"
+type="text"
+placeholder="MJ-XXXX-XXXX-XXXX"
+maxlength="16"
+autocomplete="off"
 style="
 width:100%;
-padding:10px;
+padding:8px;
 border:none;
 border-radius:8px;
-outline:none;
 box-sizing:border-box;
-margin-top:10px;
+text-transform:uppercase;
 ">
 
 <button
