@@ -58,7 +58,7 @@ document.getElementById("activateBtn").onclick = function () {
 
             panel.style.display = "none";
 
-            showMJButton();
+            // showMJButton();
 
         }, 800);
 
