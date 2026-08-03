@@ -56,9 +56,9 @@ document.getElementById("activateBtn").onclick = function () {
 
         setTimeout(() => {
 
-            panel.style.display = "none";
+            setTimeout(() => {
 
-            // showMJButton();
+            alert("License OK");
 
         }, 800);
 
