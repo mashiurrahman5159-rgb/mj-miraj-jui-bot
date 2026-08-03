@@ -103,10 +103,9 @@ btn.style.cursor = "pointer";
     };
 
 }
-if (localStorage.getItem("mj_license") === "true") {
-    panel.style.display = "none";
-    console.log("showMJButton called");
-    showMJButton();
-}
+// if (localStorage.getItem("mj_license") === "true") {
+//     panel.style.display = "none";
+//     showMJButton();
+// }
 
 })();
