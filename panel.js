@@ -81,7 +81,19 @@ function showMJButton() {
     btn.id = "mj-btn";
 
     btn.innerHTML = "MJ";
-
+btn.style.position = "fixed";
+btn.style.right = "20px";
+btn.style.bottom = "20px";
+btn.style.width = "60px";
+btn.style.height = "60px";
+btn.style.borderRadius = "50%";
+btn.style.background = "#00c853";
+btn.style.color = "#fff";
+btn.style.display = "flex";
+btn.style.alignItems = "center";
+btn.style.justifyContent = "center";
+btn.style.zIndex = "999999";
+btn.style.cursor = "pointer";
     document.body.appendChild(btn);
 
     btn.onclick = function () {
@@ -93,6 +105,7 @@ function showMJButton() {
 }
 if (localStorage.getItem("mj_license") === "true") {
     panel.style.display = "none";
+    console.log("showMJButton called");
     showMJButton();
 }
 
