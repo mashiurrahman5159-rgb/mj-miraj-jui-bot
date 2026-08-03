@@ -49,7 +49,7 @@ MJ MIRAJ JUI BOT
 <input
 id="licenseKey"
 type="text"
-value="MJ-XXXX-XXXX-XXXX"
+placeholder="MJ-XXXX-XXXX-XXXX"
 maxlength="19"
 autocomplete="off"
 style="
@@ -59,6 +59,7 @@ border:none;
 border-radius:8px;
 box-sizing:border-box;
 text-transform:uppercase;
+color:#ffffff;
 ">
 
 <button
