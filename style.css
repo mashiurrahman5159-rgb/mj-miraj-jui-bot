@@ -20,14 +20,12 @@ body{
     box-shadow:0 0 20px rgba(0,255,102,.4);
 }
 
-#mj-logo{
+.mj-logo{
     width:100px;
     height:100px;
     margin:0 auto 15px;
     border-radius:50%;
-    background:#222;
-    background-size:cover;
-    background-position:center;
+    background:url("background.jpg") center center/cover no-repeat;
 }
 
 #licenseKey{
