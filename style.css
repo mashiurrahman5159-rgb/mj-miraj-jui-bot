@@ -33,9 +33,17 @@ body{
     padding:10px;
     margin:10px 0;
     border-radius:8px;
-    border:none;
+    border:1px solid #00ff66;
     outline:none;
     box-sizing:border-box;
+    background:#2a2a2a;
+    color:#ffffff;
+    font-size:16px;
+}
+
+#licenseKey::placeholder{
+    color:#8a8a8a;
+    opacity:1;
 }
 
 #activateBtn{
