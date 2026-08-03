@@ -49,8 +49,8 @@ MJ MIRAJ JUI BOT
 <input
 id="licenseKey"
 type="text"
-placeholder="MJ-XXXX-XXXX-XXXX"
-maxlength="16"
+value="MJ-XXXX-XXXX-XXXX"
+maxlength="19"
 autocomplete="off"
 style="
 width:100%;
