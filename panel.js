@@ -1,7 +1,19 @@
 (function () {
 "use strict";
 
+const VALID_KEYS = [
+"MJ_TRADER_2026",
+"VIP_MEMBER_99",
+"PREMIUM_USER",
+"MJ: MIRAJ JUI BOT",
+"MJ: MIRAJ JUI 10219",
+"MD: BIPLOB2023",
+"MJ: JUI"
+];
+
 const panel = document.createElement("div");
+
+panel.id = "mj-license-panel";
 
 panel.innerHTML = `
 <div style="
@@ -9,65 +21,148 @@ position:fixed;
 top:50%;
 left:50%;
 transform:translate(-50%,-50%);
-width:300px;
-padding:20px;
-background:#1b1b1b;
-color:#fff;
+width:260px;
+padding:15px;
+background:#111;
 border:2px solid #00ff66;
-border-radius:12px;
+border-radius:15px;
 text-align:center;
+box-shadow:0 0 20px rgba(0,255,100,.5);
 z-index:999999;
 ">
-<h2>MJ MIRAJ JUI BOT</h2>
 
-<input id="licenseKey" placeholder="ENTER LICENSE KEY"
-style="width:100%;padding:10px;margin:10px 0;box-sizing:border-box;">
+<div id="mjLogo"
+style="
+width:80px;
+height:80px;
+margin:0 auto 10px;
+border-radius:50%;
+background:url('background.jpg') center/cover no-repeat;
+border:2px solid #00ff66;
+">
+</div>
 
-<button id="activateBtn"
-style="width:100%;padding:10px;">
+<h3 style="color:#fff;margin:5px 0;">
+MJ MIRAJ JUI BOT
+</h3>
+
+<input
+id="licenseKey"
+type="password"
+placeholder="XXXX XXXX XXXX XXXX"
+style="
+width:100%;
+padding:10px;
+border:none;
+border-radius:8px;
+outline:none;
+box-sizing:border-box;
+margin-top:10px;
+">
+
+<button
+id="activateBtn"
+style="
+width:100%;
+margin-top:10px;
+padding:10px;
+background:#00c853;
+color:#fff;
+border:none;
+border-radius:8px;
+font-weight:bold;
+">
 ACTIVATE
 </button>
 
-<p id="msg"></p>
+<p id="msg"
+style="
+margin-top:10px;
+font-size:13px;
+">
+</p>
+
 </div>
 `;
 
 document.body.appendChild(panel);
-
 document.getElementById("activateBtn").onclick = function () {
 
     const key = document.getElementById("licenseKey").value.trim();
+    const msg = document.getElementById("msg");
 
-    if (key === "MJ_TRADER_2026") {
+    if (VALID_KEYS.includes(key)) {
 
-        panel.remove();
+        msg.style.color = "#00ff66";
+        msg.innerHTML = "✔ License verified successfully.";
 
-        const btn = document.createElement("div");
+        setTimeout(function () {
 
-        btn.innerHTML = "MJ";
+            panel.remove();
 
-        btn.style.position = "fixed";
-        btn.style.right = "20px";
-        btn.style.bottom = "20px";
-        btn.style.width = "60px";
-        btn.style.height = "60px";
-        btn.style.borderRadius = "50%";
-        btn.style.background = "#00c853";
-        btn.style.color = "#fff";
-        btn.style.display = "flex";
-        btn.style.justifyContent = "center";
-        btn.style.alignItems = "center";
-        btn.style.fontWeight = "bold";
-        btn.style.zIndex = "999999";
+            showMJButton();
 
-        document.body.appendChild(btn);
+        }, 800);
 
     } else {
 
-        document.getElementById("msg").innerHTML = "Invalid License";
+        msg.style.color = "#ff3b30";
+        msg.innerHTML = "❌ License verification failed or expired.";
 
     }
 
 };
+
+function showMJButton() {
+
+    if (document.getElementById("mj-btn")) return;
+
+    const btn = document.createElement("div");
+
+    btn.id = "mj-btn";
+    btn.innerHTML = "";
+
+    btn.style.position = "fixed";
+    btn.style.right = "20px";
+    btn.style.bottom = "20px";
+    btn.style.width = "60px";
+    btn.style.height = "60px";
+    btn.style.borderRadius = "50%";
+    btn.style.background = "url('background.jpg') center/cover no-repeat";
+    btn.style.border = "2px solid #00ff66";
+    btn.style.cursor = "pointer";
+    btn.style.zIndex = "999999";
+
+    document.body.appendChild(btn);
+    // Button click → Show license panel again
+    btn.onclick = function () {
+        document.body.appendChild(panel);
+    };
+
+    // Drag button
+    let dragging = false;
+    let offsetX = 0;
+    let offsetY = 0;
+
+    btn.addEventListener("pointerdown", function (e) {
+        dragging = true;
+        offsetX = e.clientX - btn.offsetLeft;
+        offsetY = e.clientY - btn.offsetTop;
+    });
+
+    document.addEventListener("pointermove", function (e) {
+        if (!dragging) return;
+
+        btn.style.left = (e.clientX - offsetX) + "px";
+        btn.style.top = (e.clientY - offsetY) + "px";
+        btn.style.right = "auto";
+        btn.style.bottom = "auto";
+    });
+
+    document.addEventListener("pointerup", function () {
+        dragging = false;
+    });
+
+}
 
 })();
