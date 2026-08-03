@@ -57,3 +57,7 @@ body{
     margin-top:10px;
     color:#ffeb3b;
 }
+#licenseKey::placeholder{
+    color:#8a8a8a;
+    opacity:0.7;
+}
