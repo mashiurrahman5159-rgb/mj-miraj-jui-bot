@@ -61,3 +61,12 @@ body{
     color:#8a8a8a;
     opacity:0.7;
 }
+#licenseKey{
+    color:#ffffff;
+    background:#2b2b2b;
+}
+
+#licenseKey::placeholder{
+    color:#8a8a8a;
+    opacity:0.7;
+}
