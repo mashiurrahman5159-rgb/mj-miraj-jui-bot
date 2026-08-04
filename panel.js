@@ -101,7 +101,7 @@ document.getElementById("activateBtn").onclick = function () {
         
     setTimeout(function () {
 
-    panel.remove();
+    panel.style.display = "none";
 
     document.getElementById("activateBtn").style.display = "none";
 
@@ -143,8 +143,7 @@ function showMJButton() {
     btn.onclick = function () {
 
     btn.style.display = "none";
-
-    document.body.appendChild(panel);
+    panel.style.display = "block";
 
 };
 
