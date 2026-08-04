@@ -97,14 +97,17 @@ document.getElementById("activateBtn").onclick = function () {
 
         msg.style.color = "#00ff66";
         msg.innerHTML = "✔ License verified successfully.";
+        document.getElementById("activateBtn").style.display = "none";
+        
+    setTimeout(function () {
 
-        setTimeout(function () {
+    panel.remove();
 
-            panel.remove();
+    document.getElementById("activateBtn").style.display = "none";
 
-            showMJButton();
+    showMJButton();
 
-        }, 800);
+}, 1000);
 
     } else {
 
@@ -138,8 +141,12 @@ function showMJButton() {
     document.body.appendChild(btn);
     // Button click → Show license panel again
     btn.onclick = function () {
-        document.body.appendChild(panel);
-    };
+
+    btn.style.display = "none";
+
+    document.body.appendChild(panel);
+
+};
 
     // Drag button
     let dragging = false;
