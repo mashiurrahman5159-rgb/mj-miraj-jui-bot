@@ -143,7 +143,14 @@ function showMJButton() {
     btn.onclick = function () {
 
     btn.style.display = "none";
+
     panel.style.display = "block";
+
+    document.getElementById("activateBtn").style.display = "block";
+
+    document.getElementById("msg").innerHTML = "";
+
+    document.getElementById("licenseKey").value = "";
 
 };
 
