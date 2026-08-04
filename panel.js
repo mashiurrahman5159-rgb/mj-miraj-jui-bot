@@ -142,9 +142,58 @@ function showMJButton() {
     // Button click → Show license panel again
     btn.onclick = function () {
 
-    btn.style.display = "none";
+    let menu = document.getElementById("mj-menu");
 
-    panel.style.display = "block";
+    if (menu) {
+        menu.remove();
+        return;
+    }
+
+    menu = document.createElement("div");
+    menu.id = "mj-menu";
+
+    menu.style.position = "fixed";
+    menu.style.right = "20px";
+    menu.style.bottom = "90px";
+    menu.style.width = "120px";
+    menu.style.background = "#1b1b1b";
+    menu.style.border = "2px solid #00ff66";
+    menu.style.borderRadius = "10px";
+    menu.style.padding = "10px";
+    menu.style.zIndex = "999999";
+
+    menu.innerHTML = `
+        <button id="upBtn" style="
+            width:100%;
+            padding:10px;
+            margin-bottom:8px;
+            background:#00c853;
+            color:#fff;
+            border:none;
+            border-radius:8px;
+            font-weight:bold;
+        ">▲ UP</button>
+
+        <button id="downBtn" style="
+            width:100%;
+            padding:10px;
+            background:#d50000;
+            color:#fff;
+            border:none;
+            border-radius:8px;
+            font-weight:bold;
+        ">▼ DOWN</button>
+    `;
+
+    document.body.appendChild(menu);
+
+    document.getElementById("upBtn").onclick = function () {
+        alert("UP Clicked");
+    };
+
+    document.getElementById("downBtn").onclick = function () {
+        alert("DOWN Clicked");
+    };
 
 };
 
