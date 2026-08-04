@@ -146,12 +146,6 @@ function showMJButton() {
 
     panel.style.display = "block";
 
-    document.getElementById("activateBtn").style.display = "block";
-
-    document.getElementById("msg").innerHTML = "";
-
-    document.getElementById("licenseKey").value = "";
-
 };
 
     // Drag button
