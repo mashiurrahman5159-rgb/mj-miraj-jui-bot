@@ -98,6 +98,7 @@ document.getElementById("activateBtn").onclick = function () {
         msg.style.color = "#00ff66";
         msg.innerHTML = "✔ License verified successfully.";
         document.getElementById("activateBtn").style.display = "none";
+        localStorage.setItem("mj_license", "true");
         
     setTimeout(function () {
 
