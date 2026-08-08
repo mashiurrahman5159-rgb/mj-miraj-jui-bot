@@ -147,7 +147,8 @@ function showMJButton() {
     document.body.appendChild(btn);
     // Button click → Show license panel again
     btn.onclick = function () {
-// MJ MIRAJ Panel
+
+        // MJ MIRAJ Panel
 let mjPanel = document.getElementById("mj-panel");
 
 if (mjPanel) {
@@ -233,7 +234,6 @@ document.getElementById("mjStop").onclick = function () {
     document.getElementById("mjStatus").style.color = "#ff3b30";
 };
     
-
     // Drag button
     let dragging = false;
     let offsetX = 0;
