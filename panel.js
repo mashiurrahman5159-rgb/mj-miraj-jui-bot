@@ -147,61 +147,92 @@ function showMJButton() {
     document.body.appendChild(btn);
     // Button click → Show license panel again
     btn.onclick = function () {
+// MJ MIRAJ Panel
+let mjPanel = document.getElementById("mj-panel");
 
-    let menu = document.getElementById("mj-menu");
+if (mjPanel) {
+    mjPanel.remove();
+    return;
+}
 
-    if (menu) {
-        menu.remove();
-        return;
-    }
+mjPanel = document.createElement("div");
+mjPanel.id = "mj-panel";
 
-    menu = document.createElement("div");
-    menu.id = "mj-menu";
+mjPanel.style.position = "fixed";
+mjPanel.style.top = "50%";
+mjPanel.style.left = "50%";
+mjPanel.style.transform = "translate(-50%, -50%)";
+mjPanel.style.width = "280px";
+mjPanel.style.padding = "15px";
+mjPanel.style.background = "#111";
+mjPanel.style.border = "2px solid #00ff66";
+mjPanel.style.borderRadius = "15px";
+mjPanel.style.boxShadow = "0 0 25px rgba(0,255,102,.5)";
+mjPanel.style.zIndex = "1000000";
+mjPanel.style.color = "#fff";
+mjPanel.style.textAlign = "center";
 
-    menu.style.position = "fixed";
-    menu.style.right = "20px";
-    menu.style.bottom = "90px";
-    menu.style.width = "120px";
-    menu.style.background = "#1b1b1b";
-    menu.style.border = "2px solid #00ff66";
-    menu.style.borderRadius = "10px";
-    menu.style.padding = "10px";
-    menu.style.zIndex = "999999";
+mjPanel.innerHTML = `
+    <button id="mjClose" style="
+        position:absolute;
+        right:8px;
+        top:6px;
+        background:none;
+        border:none;
+        color:#fff;
+        font-size:20px;
+        cursor:pointer;
+    ">×</button>
 
-    menu.innerHTML = `
-        <button id="upBtn" style="
-            width:100%;
-            padding:10px;
-            margin-bottom:8px;
-            background:#00c853;
-            color:#fff;
-            border:none;
-            border-radius:8px;
-            font-weight:bold;
-        ">▲ UP</button>
+    <h2 style="margin:5px 0 12px;">MJ MIRAJ</h2>
 
-        <button id="downBtn" style="
-            width:100%;
-            padding:10px;
-            background:#d50000;
-            color:#fff;
-            border:none;
-            border-radius:8px;
-            font-weight:bold;
-        ">▼ DOWN</button>
-    `;
+    <div id="mjStatus" style="
+        color:#ff3b30;
+        font-weight:bold;
+        margin:10px 0;
+    ">● STOPPED</div>
 
-    document.body.appendChild(menu);
+    <div style="margin:12px 0;">
+        Status: <b style="color:#00ff66;">Licensed</b>
+    </div>
 
-    document.getElementById("upBtn").onclick = function () {
-        alert("UP Clicked");
-    };
+    <button id="mjStart" style="
+        width:48%;
+        padding:10px;
+        background:#00c853;
+        color:#fff;
+        border:none;
+        border-radius:8px;
+        font-weight:bold;
+    ">START BOT</button>
 
-    document.getElementById("downBtn").onclick = function () {
-        alert("DOWN Clicked");
-    };
+    <button id="mjStop" style="
+        width:48%;
+        padding:10px;
+        background:#d50000;
+        color:#fff;
+        border:none;
+        border-radius:8px;
+        font-weight:bold;
+    ">STOP BOT</button>
+`;
 
+document.body.appendChild(mjPanel);
+
+document.getElementById("mjClose").onclick = function () {
+    mjPanel.remove();
 };
+
+document.getElementById("mjStart").onclick = function () {
+    document.getElementById("mjStatus").innerHTML = "● RUNNING";
+    document.getElementById("mjStatus").style.color = "#00ff66";
+};
+
+document.getElementById("mjStop").onclick = function () {
+    document.getElementById("mjStatus").innerHTML = "● STOPPED";
+    document.getElementById("mjStatus").style.color = "#ff3b30";
+};
+    
 
     // Drag button
     let dragging = false;
