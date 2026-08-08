@@ -118,7 +118,12 @@ document.getElementById("activateBtn").onclick = function () {
     }
 
 };
-
+// Check saved license
+if (localStorage.getItem("mj_license") === "true") {
+    panel.style.display = "none";
+    showMJButton();
+}
+      
 function showMJButton() {
 
     if (document.getElementById("mj-btn")) return;
