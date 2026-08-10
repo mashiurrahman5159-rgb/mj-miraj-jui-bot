@@ -261,5 +261,5 @@ document.getElementById("mjStop").onclick = function () {
     });
 
 };
-
+}
 })();
