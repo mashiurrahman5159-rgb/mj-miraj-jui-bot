@@ -1,6 +1,8 @@
 (function () {
 "use strict";
-
+    
+console.log("MJ BOT SCRIPT LOADED");
+    
 const VALID_KEYS = [
 "MJ_TRADER_2026",
 "VIP_MEMBER_99",
