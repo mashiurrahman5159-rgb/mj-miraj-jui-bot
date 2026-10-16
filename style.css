@@ -10,7 +10,8 @@ body{
     top:50%;
     left:50%;
     transform:translate(-50%,-50%);
-    width:320px;
+    width:90%;
+    max-width:360px;
     background:#1b1b1b;
     border:2px solid #00ff66;
     border-radius:15px;
@@ -18,6 +19,7 @@ body{
     text-align:center;
     color:#fff;
     box-shadow:0 0 20px rgba(0,255,102,.4);
+    z-index:999999;
 }
 
 .mj-logo{
@@ -65,6 +67,7 @@ body{
     margin-top:10px;
     color:#ffeb3b;
 }
+
 #licenseKey::placeholder{
     color:#8a8a8a;
     opacity:0.7;
@@ -78,3 +81,27 @@ body{
     color:#8a8a8a;
     opacity:0.7;
 }
+
+/* Floating button adjustments */
+#mj-btn{
+    width:60px !important;
+    height:60px !important;
+    min-width:56px;
+    min-height:56px;
+    border-radius:50% !important;
+    touch-action:none; /* helps with pointer events */
+}
+
+/* Mobile tweaks */
+@media (max-width:480px) {
+    #mj-license-panel{ padding:16px; }
+    #activateBtn{ padding:12px; font-size:17px; }
+    #licenseKey{ padding:12px; font-size:17px; }
+    .mj-logo{ width:72px; height:72px; }
+}
+
+/* MJ panel inner layout */
+#mj-panel button{ outline:none }
+
+/* Utility */
+.hidden{ display:none !important }
